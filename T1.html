@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.js"></script>
+ </head>
+ <body>
+  <section calss="login-from">
+    <h1>로그인</h1>
+    <from action="">
+        <div calss="int area">
+            <input type="text" name="id" id="id" autocomplete="off" required>
+            <lable for="id">USER NAME</lable>
+        </div>
+        <div calss="int area">
+            <input type="password" name="pw" id="pw" autocomplete="off" required>
+            <lable for="pw">PASSWORD</lable>
+        </div>
+        <div calss="btn-area">
+            <button type="submit">LOGIN</button>
+        </div>
+    </from>
+    <div calss="caption">
+        <a href="">Forgot Password?</a>
+    </div>
+    </section>
+    <script>
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addclass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500);
+            }
+           else if($(pw).val() == "") {
+                $(pw).next('label').addclass('warning');
+                setTimeout(function() {
+                    $('label').removeClass('warning');
+                },1500);
+            }
+        })
+    </script>
+ </body>
+ </html>
